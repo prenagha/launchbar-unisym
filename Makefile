@@ -2,7 +2,7 @@ SHELL = /bin/bash
 DESTDIR = ./dist
 
 BUNDLE_NAME = Unicode\ Symbols
-BUNDLE_VERSION = 1.0.0
+BUNDLE_VERSION = $(shell cat VERSION)
 BUNDLE_IDENTIFIER = nbjahan.launchbar.unisym
 BUNDLE_ICON = at.obdev.LaunchBar:Pref_Shortcuts
 AUTHOR = Nima\ Jahanshahi
@@ -34,15 +34,15 @@ golb:
 $(LBACTION):
 	@echo "Creating the $(BUNDLE_NAME).lbaction"
 	@install -d ${LBACTION}/Contents/{Resources,Scripts}
+	@plutil -replace CFBundleName -string $(BUNDLE_NAME) $(PWD)/src/Info.plist
+	@plutil -replace CFBundleVersion -string $(BUNDLE_VERSION) $(PWD)/src/Info.plist
+	@plutil -replace CFBundleIdentifier -string $(BUNDLE_IDENTIFIER) $(PWD)/src/Info.plist
+	@plutil -replace CFBundleIconFile -string $(BUNDLE_ICON) $(PWD)/src/Info.plist
+	@plutil -replace LBDescription.LBAuthor -string $(AUTHOR) $(PWD)/src/Info.plist
+	@plutil -replace LBDescription.LBTwitter -string $(TWITTER) $(PWD)/src/Info.plist
+	@plutil -replace LBDescription.LBWebsite -string $(WEBSITE) $(PWD)/src/Info.plist
+	@plutil -replace LBScripts.LBDefaultScript.LBScriptName -string $(SCRIPT_NAME) $(PWD)/src/Info.plist
 	@install -pm 0644 ./src/Info.plist $(LBACTION)/Contents/
-	@sed -e "s/\%BUNDLE_NAME\%/$(BUNDLE_NAME)/" \
-	-e "s/\%BUNDLE_VERSION\%/$(BUNDLE_VERSION)/" \
-	-e "s/\%BUNDLE_IDENTIFIER\%/$(BUNDLE_IDENTIFIER)/" \
-	-e "s/\%BUNDLE_ICON\%/$(BUNDLE_ICON)/" \
-	-e "s/\%AUTHOR\%/$(AUTHOR)/" \
-	-e "s/\%TWITTER\%/$(TWITTER)/" \
-	-e "s#\%WEBSITE\%#$(WEBSITE)#" \
-	-e "s/\%SCRIPT_NAME\%/$(SCRIPT_NAME)/" -i "" $(LBACTION)/Contents/Info.plist
 	@cp -r ./resources/* $(LBACTION)/Contents/Resources/
 	go build $(LDFLAGS) -o $(LBACTION)/Contents/Scripts/$(SCRIPT_NAME) ./src
 
