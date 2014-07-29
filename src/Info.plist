@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key>
+	<string>%BUNDLE_NAME%</string>
+	<key>CFBundleVersion</key>
+	<string>%BUNDLE_VERSION%</string>
+	<key>CFBundleIdentifier</key>
+	<string>%BUNDLE_IDENTIFIER%</string>
+	<key>CFBundleIconFile</key>
+	<string>%BUNDLE_ICON%</string>
+	<key>LBDebugLogEnabled</key>
+	<false/>
+	<key>LBScripts</key>
+	<dict>
+		<key>LBDefaultScript</key>
+		<dict>
+			<key>LBScriptName</key>
+			<string>%SCRIPT_NAME%</string>
+			<key>LBRequiresArgument</key>
+			<false/>
+			<key>LBLiveFeedbackEnabled</key>
+			<false/>
+            <key>LBReturnsResult</key>
+            <true/>
+            <key>LBRunInBackground</key>
+            <false/>
+		</dict>
+	</dict>
+	<key>LBDescription</key>
+	<dict>
+		<key>LBAuthor</key>
+		<string>%AUTHOR%</string>
+		<key>LBTwitter</key>
+		<string>%TWITTER%</string>
+		<key>LBWebsite</key>
+		<string>%WEBSITE%</string>
+		<key>LBSummary</key>
+		<string>Collection of unicode symbols to use in text: ⚖ ☯ ∞ ★ ☕</string>
+	</dict>
+</dict>
+</plist>

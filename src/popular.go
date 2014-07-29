@@ -1,0 +1,147 @@
+package main
+
+import . "github.com/nbjahan/go-launchbar"
+
+func addPopular() {
+	var i *Item
+	v := pb.GetView("main")
+
+	chars := [][2]string{
+		{"Black Florette", "✿"},
+		{"White Smiling Face", "☺"},
+		{"Black Smiling Face", "☻"},
+		{"White Frowning Face", "☹"},
+		{"White Sun With Rays", "☼"},
+		{"Umbrella", "☂"},
+		{"Snowman", "☃"},
+		{"Wavy Line", "⌇"},
+		{"Atom Symbol", "⚛"},
+		{"Keyboard", "⌨"},
+		{"Telephone Location Sign", "✆"},
+		{"Black Telephone", "☎"},
+		{"Apple Logo", ""},
+		{"Place Of Interest Sign", "⌘"},
+		{"Option Key", "⌥"},
+		{"Upwards White Arrow", "⇧"},
+		{"Leftwards Arrow With Hook", "↩"},
+		{"Shadowed White Latin Cross", "✞"},
+		{"Star Of David", "✡"},
+		{"Hammer And Sickle", "☭"},
+		{"Leftwards Arrow", "←"},
+		{"Rightwards Arrow", "→"},
+		{"Upwards Arrow", "↑"},
+		{"Downwards Arrow", "↓"},
+		{"Back Tilted Shadowed White Rightwards Arrow", "➫"},
+		{"Downwards Black Arrow", "⬇"},
+		{"Upwards Black Arrow", "⬆"},
+		{"White Left Pointing Index", "☜"},
+		{"White Right Pointing Index", "☞"},
+		{"White Up Pointing Index", "☝"},
+		{"White Down Pointing Index", "☟"},
+		{"Writing Hand", "✍"},
+		{"Lower Right Pencil", "✎"},
+		{"Victory Hand", "✌"},
+		{"Peace Symbol", "☮"},
+		{"Heavy Check Mark", "✔"},
+		{"Black Star", "★"},
+		{"White Star", "☆"},
+		{"Recycling Symbol For Generic Materials", "♺"},
+		{"Black Flag", "⚑"},
+		{"White Flag", "⚐"},
+		{"Envelope", "✉"},
+		{"White Scissors", "✄"},
+		{"Conical Taper", "⌲"},
+		{"Airplane", "✈"},
+		{"Black Diamond Suit", "♦"},
+		{"Black Club Suit", "♣"},
+		{"Black Spade Suit", "♠"},
+		{"Black Heart Suit", "♥"},
+		{"Heavy Black Heart", "❤"},
+		{"White Heart Suit", "♡"},
+		{"Eighth Note", "♪"},
+		{"Quarter Note", "♩"},
+		{"Beamed Eighth Notes", "♫"},
+		{"Beamed Sixteenth Notes", "♬"},
+		{"Music Sharp Sign", "♯"},
+		{"Female Sign", "♀"},
+		{"Male Sign", "♂"},
+		{"Male And Female Sign", "⚥"},
+		{"Doubled Female Sign", "⚢"},
+		{"Doubled Male Sign", "⚣"},
+		{"Lower Right Shadowed White Square", "❑"},
+		{"Upper Right Shadowed White Square", "❒"},
+		{"White Diamond Containing Black Small Diamond", "◈"},
+		{"Circle With Left Half Black", "◐"},
+		{"Circle With Right Half Black", "◑"},
+		{"Heavy Multiplication X", "✖"},
+		{"Infinity", "∞"},
+		{"Left Pointing Double Angle Quotation Mark", "«"},
+		{"Right Pointing Double Angle Quotation Mark", "»"},
+		{"Single Left Pointing Angle Quotation Mark", "‹"},
+		{"Single Right Pointing Angle Quotation Mark", "›"},
+		{"Left Double Quotation Mark", "“"},
+		{"Right Double Quotation Mark", "”"},
+		{"Left Single Quotation Mark", "‘"},
+		{"Right Single Quotation Mark", "’"},
+		{"Double Low 9 Quotation Mark", "„"},
+		{"Single Low 9 Quotation Mark", "‚"},
+		{"En Dash", "–"},
+		{"Em Dash", "—"},
+		{"Vertical Line", "|"},
+		{"Fraction Slash", "⁄"},
+		{"Reverse Solidus", "\\"},
+		{"Left Square Bracket", "["},
+		{"Right Square Bracket", "]"},
+		{"Left Curly Bracket", "{"},
+		{"Right Curly Bracket", "}"},
+		{"Section Sign", "§"},
+		{"Pilcrow Sign", "¶"},
+		{"Inverted Exclamation Mark", "¡"},
+		{"Inverted Question Mark", "¿"},
+		{"Interrobang", "‽"},
+		{"Asterism", "⁂"},
+		{"Reference Mark", "※"},
+		{"Plus Minus Sign", "±"},
+		{"Multiplication Sign", "×"},
+		{"Tilde", "~"},
+		{"Almost Equal To", "≈"},
+		{"Division Sign", "÷"},
+		{"Not Equal To", "≠"},
+		{"Greek Small Letter Pi", "π"},
+		{"Dagger", "†"},
+		{"Double Dagger", "‡"},
+		{"Yen Sign", "¥"},
+		{"Euro Sign", "€"},
+		{"Dollar Sign", "$"},
+		{"Cent Sign", "¢"},
+		{"Pound Sign", "£"},
+		{"Latin Small Letter Sharp S", "ß"},
+		{"Copyright Sign", "©"},
+		{"Registered Sign", "®"},
+		{"Commercial At", "@"},
+		{"Trade Mark Sign", "™"},
+		{"Degree Sign", "°"},
+		{"Per Mille Sign", "‰"},
+		{"Horizontal Ellipsis", "…"},
+		{"Middle Dot", "·"},
+		{"Bullet", "•"},
+		{"Black Circle", "●"},
+	}
+	i = v.NewItem("Popular")
+	i.SetIcon(iconPath("popular", "Atom-Symbol"))
+	i.SetActionRunsInBackground(false)
+	i.SetActionReturnsItems(true)
+	i.SetRun(func(c *Context) Items {
+		items := NewItems()
+		for _, row := range chars {
+			i := NewItem(row[0])
+			i.SetIcon(iconPath("popular", row[0]))
+			i.Run("showChar", row[0], row[1])
+			i.SetAction("unisym")
+			i.SetActionReturnsItems(true)
+			i.SetActionRunsInBackground(false)
+			items.Add(i)
+		}
+		return *items
+	})
+}
