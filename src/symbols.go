@@ -1,12 +1,7 @@
 package main
 
-import . "github.com/nbjahan/go-launchbar"
-
-func addSymbols() {
-	var i *Item
-	v := pb.GetView("main")
-
-	chars := [][2]string{
+func init() {
+	chars["symbols"] = [][2]string{
 		{"Umbrella", "☂"},
 		{"Umbrella With Rain Drops", "☔"},
 		{"Airplane", "✈"},
@@ -275,21 +270,4 @@ func addSymbols() {
 		{"Earth Ground", "⏚"},
 		{"Fuse", "⏛"},
 	}
-	i = v.NewItem("Symbols")
-	i.SetIcon(iconPath("symbols", "Yin Yang"))
-	i.SetActionRunsInBackground(false)
-	i.SetActionReturnsItems(true)
-	i.SetRun(func(c *Context) Items {
-		items := NewItems()
-		for _, row := range chars {
-			i := NewItem(row[0])
-			i.SetIcon(iconPath("symbols", row[0]))
-			i.Run("showChar", row[0], row[1])
-			i.SetAction("unisym")
-			i.SetActionReturnsItems(true)
-			i.SetActionRunsInBackground(false)
-			items.Add(i)
-		}
-		return *items
-	})
 }

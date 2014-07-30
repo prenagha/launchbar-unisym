@@ -1,12 +1,7 @@
 package main
 
-import . "github.com/nbjahan/go-launchbar"
-
-func addClassics() {
-	var i *Item
-	v := pb.GetView("main")
-
-	chars := [][2]string{
+func init() {
+	chars["classics"] = [][2]string{
 		{"Place Of Interest Sign", "⌘"},
 		{"Left Pointing Double Angle Quotation Mark", "«"},
 		{"Right Pointing Double Angle Quotation Mark", "»"},
@@ -158,21 +153,4 @@ func addClassics() {
 		{"Latin Capital Letter Z With Caron", "Ž"},
 		{"Latin Small Letter Z With Caron", "ž"},
 	}
-	i = v.NewItem("Classics")
-	i.SetIcon(iconPath("classics", "Eighth Note"))
-	i.SetActionRunsInBackground(false)
-	i.SetActionReturnsItems(true)
-	i.SetRun(func(c *Context) Items {
-		items := NewItems()
-		for _, row := range chars {
-			i := NewItem(row[0])
-			i.SetIcon(iconPath("classics", row[0]))
-			i.Run("showChar", row[0], row[1])
-			i.SetAction("unisym")
-			i.SetActionReturnsItems(true)
-			i.SetActionRunsInBackground(false)
-			items.Add(i)
-		}
-		return *items
-	})
 }

@@ -12,6 +12,7 @@ import (
 var InDev string
 
 var pb *Action
+var chars = map[string][][2]string{}
 
 func iconPath(f, s string) string {
 	s = strings.Replace(s, " ", "-", -1) + "-Template.pdf"
@@ -38,7 +39,10 @@ var funcs = FuncMap{
 }
 
 func main() {
+
 	pb.Init(funcs)
+
+	setupViews()
 
 	if InDev != "" {
 		pb.Logger.Printf("in:\n%s\n", pb.Input.Raw())

@@ -1,12 +1,7 @@
 package main
 
-import . "github.com/nbjahan/go-launchbar"
-
-func addNumerals() {
-	var i *Item
-	v := pb.GetView("main")
-
-	chars := [][2]string{
+func init() {
+	chars["numerals"] = [][2]string{
 		{"Digit One Full Stop", "⒈"},
 		{"Digit Two Full Stop", "⒉"},
 		{"Digit Three Full Stop", "⒊"},
@@ -142,21 +137,4 @@ func addNumerals() {
 		{"Double Circled Digit Nine", "⓽"},
 		{"Double Circled Number Ten", "⓾"},
 	}
-	i = v.NewItem("Numerals")
-	i.SetIcon(iconPath("numerals", "Vulgar Fraction Zero Thirds"))
-	i.SetActionRunsInBackground(false)
-	i.SetActionReturnsItems(true)
-	i.SetRun(func(c *Context) Items {
-		items := NewItems()
-		for _, row := range chars {
-			i := NewItem(row[0])
-			i.SetIcon(iconPath("numerals", row[0]))
-			i.Run("showChar", row[0], row[1])
-			i.SetAction("unisym")
-			i.SetActionReturnsItems(true)
-			i.SetActionRunsInBackground(false)
-			items.Add(i)
-		}
-		return *items
-	})
 }

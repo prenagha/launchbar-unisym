@@ -28,7 +28,7 @@
 		<key>LBDefaultScript</key>
 		<dict>
 			<key>LBLiveFeedbackEnabled</key>
-			<false/>
+			<true/>
 			<key>LBRequiresArgument</key>
 			<false/>
 			<key>LBReturnsResult</key>

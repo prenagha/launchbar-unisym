@@ -1,12 +1,7 @@
 package main
 
-import . "github.com/nbjahan/go-launchbar"
-
-func addPopular() {
-	var i *Item
-	v := pb.GetView("main")
-
-	chars := [][2]string{
+func init() {
+	chars["popular"] = [][2]string{
 		{"Black Florette", "✿"},
 		{"White Smiling Face", "☺"},
 		{"Black Smiling Face", "☻"},
@@ -127,21 +122,4 @@ func addPopular() {
 		{"Bullet", "•"},
 		{"Black Circle", "●"},
 	}
-	i = v.NewItem("Popular")
-	i.SetIcon(iconPath("popular", "Atom-Symbol"))
-	i.SetActionRunsInBackground(false)
-	i.SetActionReturnsItems(true)
-	i.SetRun(func(c *Context) Items {
-		items := NewItems()
-		for _, row := range chars {
-			i := NewItem(row[0])
-			i.SetIcon(iconPath("popular", row[0]))
-			i.Run("showChar", row[0], row[1])
-			i.SetAction("unisym")
-			i.SetActionReturnsItems(true)
-			i.SetActionRunsInBackground(false)
-			items.Add(i)
-		}
-		return *items
-	})
 }

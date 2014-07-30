@@ -1,12 +1,7 @@
 package main
 
-import . "github.com/nbjahan/go-launchbar"
-
-func addPunctuations() {
-	var i *Item
-	v := pb.GetView("main")
-
-	chars := [][2]string{
+func init() {
+	chars["punctuations"] = [][2]string{
 		{"Heavy Double Turned Comma Quotation Mark Ornament", "❝"},
 		{"Heavy Double Comma Quotation Mark Ornament", "❞"},
 		{"Heavy Single Turned Comma Quotation Mark Ornament", "❛"},
@@ -214,21 +209,4 @@ func addPunctuations() {
 		{"Upper Right Or Lower Left Curly Bracket Section", "⎱"},
 		{"Apostrophe", "'"},
 	}
-	i = v.NewItem("Punctuations")
-	i.SetIcon(iconPath("punctuations", "Heavy Double Comma Quotation Mark Ornament"))
-	i.SetActionRunsInBackground(false)
-	i.SetActionReturnsItems(true)
-	i.SetRun(func(c *Context) Items {
-		items := NewItems()
-		for _, row := range chars {
-			i := NewItem(row[0])
-			i.SetIcon(iconPath("punctuations", row[0]))
-			i.Run("showChar", row[0], row[1])
-			i.SetAction("unisym")
-			i.SetActionReturnsItems(true)
-			i.SetActionRunsInBackground(false)
-			items.Add(i)
-		}
-		return *items
-	})
 }

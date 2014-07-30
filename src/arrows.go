@@ -1,12 +1,7 @@
 package main
 
-import . "github.com/nbjahan/go-launchbar"
-
-func addArrows() {
-	var i *Item
-	v := pb.GetView("main")
-
-	arrows := [][2]string{
+func init() {
+	chars["arrows"] = [][2]string{
 		{"Rightwards Arrow With Hook", "↪"},
 		{"Leftwards Arrow With Hook", "↩"},
 		{"Leftwards Arrow", "←"},
@@ -328,21 +323,4 @@ func addArrows() {
 		{"Apl Functional Symbol Leftwards Vane", "⍅"},
 		{"Apl Functional Symbol Rightwards Vane", "⍆"},
 	}
-	i = v.NewItem("Arrows")
-	i.SetIcon(iconPath("arrows", "Downwards-Zigzag-Arrow"))
-	i.SetActionRunsInBackground(false)
-	i.SetActionReturnsItems(true)
-	i.SetRun(func(c *Context) Items {
-		items := NewItems()
-		for _, row := range arrows {
-			i := NewItem(row[0])
-			i.SetIcon(iconPath("arrows", row[0]))
-			i.Run("showChar", row[0], row[1])
-			i.SetAction("unisym")
-			i.SetActionReturnsItems(true)
-			i.SetActionRunsInBackground(false)
-			items.Add(i)
-		}
-		return *items
-	})
 }

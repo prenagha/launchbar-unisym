@@ -1,12 +1,7 @@
 package main
 
-import . "github.com/nbjahan/go-launchbar"
-
-func addMath() {
-	var i *Item
-	v := pb.GetView("main")
-
-	chars := [][2]string{
+func init() {
+	chars["math"] = [][2]string{
 		{"Infinity", "∞"},
 		{"Three Dimensional Angle", "⟀"},
 		{"White Triangle Containing Small White Triangle", "⟁"},
@@ -431,21 +426,4 @@ func addMath() {
 		{"Heavy Multiplication X", "✖"},
 		{"Heavy Greek Cross", "✚"},
 	}
-	i = v.NewItem("Math")
-	i.SetIcon(iconPath("math", "Surface Integral"))
-	i.SetActionRunsInBackground(false)
-	i.SetActionReturnsItems(true)
-	i.SetRun(func(c *Context) Items {
-		items := NewItems()
-		for _, row := range chars {
-			i := NewItem(row[0])
-			i.SetIcon(iconPath("math", row[0]))
-			i.Run("showChar", row[0], row[1])
-			i.SetAction("unisym")
-			i.SetActionReturnsItems(true)
-			i.SetActionRunsInBackground(false)
-			items.Add(i)
-		}
-		return *items
-	})
 }

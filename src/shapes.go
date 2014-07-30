@@ -1,12 +1,7 @@
 package main
 
-import . "github.com/nbjahan/go-launchbar"
-
-func addShapes() {
-	var i *Item
-	v := pb.GetView("main")
-
-	chars := [][2]string{
+func init() {
+	chars["shapes"] = [][2]string{
 		{"Black Up Pointing Triangle", "▲"},
 		{"Black Down Pointing Triangle", "▼"},
 		{"Black Left Pointing Triangle", "◀"},
@@ -404,21 +399,4 @@ func addShapes() {
 		{"Box Drawings Vertical Double And Horizontal Single", "╫"},
 		{"Box Drawings Double Vertical And Horizontal", "╬"},
 	}
-	i = v.NewItem("Shapes")
-	i.SetIcon(iconPath("shapes", "Square With Upper Right To Lower Left Fill"))
-	i.SetActionRunsInBackground(false)
-	i.SetActionReturnsItems(true)
-	i.SetRun(func(c *Context) Items {
-		items := NewItems()
-		for _, row := range chars {
-			i := NewItem(row[0])
-			i.SetIcon(iconPath("shapes", row[0]))
-			i.Run("showChar", row[0], row[1])
-			i.SetAction("unisym")
-			i.SetActionReturnsItems(true)
-			i.SetActionRunsInBackground(false)
-			items.Add(i)
-		}
-		return *items
-	})
 }
