@@ -21,7 +21,7 @@ func (items byScore) Less(i, j int) bool {
 	return scores[i] < scores[j]
 }
 
-func search(q string) *Items {
+func search(q string, n int) *Items {
 	items := NewItems()
 	q = strings.TrimSpace(q)
 	if len(q) < 3 {
@@ -31,6 +31,7 @@ func search(q string) *Items {
 	fuzz := gofuzz.New()
 	fuzz.Threshold = 0.2
 	scores = make([]float64, 0)
+LOOP:
 	for cat, symbols := range chars {
 		for _, row := range symbols {
 			pos, score := fuzz.Search(row[0], q, 0)
@@ -47,6 +48,10 @@ func search(q string) *Items {
 				i.SetActionReturnsItems(true)
 				i.SetActionRunsInBackground(false)
 				items.Add(i)
+				n -= 1
+				if n == 0 {
+					break LOOP
+				}
 			}
 		}
 	}
