@@ -31,22 +31,24 @@ func newCategory(name, icon string) *Item {
 }
 
 func setupViews() {
-	var i *Item
-	var items *Items
 	v := pb.NewView("main")
 
 	in := pb.Input.String()
 
 	if !pb.Input.IsEmpty() {
-		i = v.NewItem("Unicode Symbols: Search")
+		i := v.NewItem("Unicode Symbols: Search")
 		i.SetIcon("/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/MagnifyingGlassIcon.icns")
 		i.SetSubtitle(fmt.Sprintf("for: %q", in))
 		i.SetActionRunsInBackground(false)
 		i.SetActionReturnsItems(true)
 		i.SetRun(func(c *Context) Items {
-			items = search(pb.Input.String())
+			items := search(pb.Input.String())
 			return *items
 		})
+
+		for _, item := range *search(in) {
+			v.AddItem(item)
+		}
 		return
 	}
 

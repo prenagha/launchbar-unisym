@@ -27,6 +27,8 @@
 	<dict>
 		<key>LBDefaultScript</key>
 		<dict>
+			<key>LBBackgroundKillEnabled</key>
+			<true/>
 			<key>LBLiveFeedbackEnabled</key>
 			<true/>
 			<key>LBRequiresArgument</key>
