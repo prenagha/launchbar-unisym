@@ -36,17 +36,17 @@ func setupViews() {
 	in := pb.Input.String()
 
 	if !pb.Input.IsEmpty() {
-		i := v.NewItem("Unicode Symbols: Search")
+		i := v.NewItem("Unicode Symbols: Search for all")
 		i.SetIcon("/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/MagnifyingGlassIcon.icns")
 		i.SetSubtitle(fmt.Sprintf("for: %q", in))
 		i.SetActionRunsInBackground(false)
 		i.SetActionReturnsItems(true)
 		i.SetRun(func(c *Context) Items {
-			items := search(pb.Input.String())
+			items := search(pb.Input.String(),-1)
 			return *items
 		})
 
-		for _, item := range *search(in) {
+		for _, item := range *search(in, 10) {
 			v.AddItem(item)
 		}
 		return
