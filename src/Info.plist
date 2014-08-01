@@ -9,7 +9,7 @@
 	<key>CFBundleName</key>
 	<string>Unicode Symbols</string>
 	<key>CFBundleVersion</key>
-	<string>1.2.0</string>
+	<string>1.3.0</string>
 	<key>LBDebugLogEnabled</key>
 	<false/>
 	<key>LBDescription</key>
@@ -27,6 +27,8 @@
 	<dict>
 		<key>LBDefaultScript</key>
 		<dict>
+			<key>LBBackgroundKillEnabled</key>
+			<true/>
 			<key>LBLiveFeedbackEnabled</key>
 			<true/>
 			<key>LBRequiresArgument</key>
