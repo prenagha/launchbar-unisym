@@ -1,0 +1,37 @@
+package main
+
+func init() {
+	chars["0fe30"] = [][2]string{
+		{"Presentation Form For Vertical Two Dot Leader", "\U0000fe30"},
+		{"Presentation Form For Vertical Em Dash", "\U0000fe31"},
+		{"Presentation Form For Vertical En Dash", "\U0000fe32"},
+		{"Presentation Form For Vertical Low Line", "\U0000fe33"},
+		{"Presentation Form For Vertical Wavy Low Line", "\U0000fe34"},
+		{"Presentation Form For Vertical Left Parenthesis", "\U0000fe35"},
+		{"Presentation Form For Vertical Right Parenthesis", "\U0000fe36"},
+		{"Presentation Form For Vertical Left Curly Bracket", "\U0000fe37"},
+		{"Presentation Form For Vertical Right Curly Bracket", "\U0000fe38"},
+		{"Presentation Form For Vertical Left Tortoise Shell Bracket", "\U0000fe39"},
+		{"Presentation Form For Vertical Right Tortoise Shell Bracket", "\U0000fe3a"},
+		{"Presentation Form For Vertical Left Black Lenticular Bracket", "\U0000fe3b"},
+		{"Presentation Form For Vertical Right Black Lenticular Bracket", "\U0000fe3c"},
+		{"Presentation Form For Vertical Left Double Angle Bracket", "\U0000fe3d"},
+		{"Presentation Form For Vertical Right Double Angle Bracket", "\U0000fe3e"},
+		{"Presentation Form For Vertical Left Angle Bracket", "\U0000fe3f"},
+		{"Presentation Form For Vertical Right Angle Bracket", "\U0000fe40"},
+		{"Presentation Form For Vertical Left Corner Bracket", "\U0000fe41"},
+		{"Presentation Form For Vertical Right Corner Bracket", "\U0000fe42"},
+		{"Presentation Form For Vertical Left White Corner Bracket", "\U0000fe43"},
+		{"Presentation Form For Vertical Right White Corner Bracket", "\U0000fe44"},
+		{"Sesame Dot", "\U0000fe45"},
+		{"White Sesame Dot", "\U0000fe46"},
+		{"Presentation Form For Vertical Left Square Bracket", "\U0000fe47"},
+		{"Presentation Form For Vertical Right Square Bracket", "\U0000fe48"},
+		{"Dashed Overline", "\U0000fe49"},
+		{"Centreline Overline", "\U0000fe4a"},
+		{"Wavy Overline", "\U0000fe4b"},
+		{"Double Wavy Overline", "\U0000fe4c"},
+		{"Dashed Low Line", "\U0000fe4d"},
+		{"Centreline Low Line", "\U0000fe4e"},
+	}
+}

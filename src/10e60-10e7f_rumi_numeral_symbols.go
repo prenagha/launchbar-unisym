@@ -1,0 +1,37 @@
+package main
+
+func init() {
+	chars["10e60"] = [][2]string{
+		{"Rumi Digit One", "\U00010e60"},
+		{"Rumi Digit Two", "\U00010e61"},
+		{"Rumi Digit Three", "\U00010e62"},
+		{"Rumi Digit Four", "\U00010e63"},
+		{"Rumi Digit Five", "\U00010e64"},
+		{"Rumi Digit Six", "\U00010e65"},
+		{"Rumi Digit Seven", "\U00010e66"},
+		{"Rumi Digit Eight", "\U00010e67"},
+		{"Rumi Digit Nine", "\U00010e68"},
+		{"Rumi Number Ten", "\U00010e69"},
+		{"Rumi Number Twenty", "\U00010e6a"},
+		{"Rumi Number Thirty", "\U00010e6b"},
+		{"Rumi Number Forty", "\U00010e6c"},
+		{"Rumi Number Fifty", "\U00010e6d"},
+		{"Rumi Number Sixty", "\U00010e6e"},
+		{"Rumi Number Seventy", "\U00010e6f"},
+		{"Rumi Number Eighty", "\U00010e70"},
+		{"Rumi Number Ninety", "\U00010e71"},
+		{"Rumi Number One Hundred", "\U00010e72"},
+		{"Rumi Number Two Hundred", "\U00010e73"},
+		{"Rumi Number Three Hundred", "\U00010e74"},
+		{"Rumi Number Four Hundred", "\U00010e75"},
+		{"Rumi Number Five Hundred", "\U00010e76"},
+		{"Rumi Number Six Hundred", "\U00010e77"},
+		{"Rumi Number Seven Hundred", "\U00010e78"},
+		{"Rumi Number Eight Hundred", "\U00010e79"},
+		{"Rumi Number Nine Hundred", "\U00010e7a"},
+		{"Rumi Fraction One Half", "\U00010e7b"},
+		{"Rumi Fraction One Quarter", "\U00010e7c"},
+		{"Rumi Fraction One Third", "\U00010e7d"},
+		{"Rumi Fraction Two Thirds", "\U00010e7e"},
+ }
+}

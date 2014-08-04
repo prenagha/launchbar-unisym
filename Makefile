@@ -43,8 +43,8 @@ $(LBACTION):
 	@plutil -replace LBDescription.LBWebsite -string $(WEBSITE) $(PWD)/src/Info.plist
 	@plutil -replace LBScripts.LBDefaultScript.LBScriptName -string $(SCRIPT_NAME) $(PWD)/src/Info.plist
 	@install -pm 0644 ./src/Info.plist $(LBACTION)/Contents/
-	@cp -r ./resources/* $(LBACTION)/Contents/Resources/
 	go build $(LDFLAGS) -o $(LBACTION)/Contents/Scripts/$(SCRIPT_NAME) ./src
+	@cp -r ./resources/* $(LBACTION)/Contents/Resources/
 
 edit:
 	@mvim .
