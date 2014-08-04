@@ -2,16 +2,15 @@
 
 A Collection of unicode symbols in [LaunchBar 6](http://obdev.at/products/launchbar).
 
-Based on a work by [copypastecharacter.com](http://copypastecharacter.com)
+- Inspired by [copypastecharacter.com](http://copypastecharacter.com)
+- Over 9000 glyphs
+- Live search
+- Easy paste 
+- Unicode 7.0.0
 
-![](img/unisym-action.png)
-![](img/unisym-categories.png)
-![](img/unisym-names.png)
-![](img/unisym-char.png)
+![](img/unisym-categories-all.png)
 
-## Search `new`
-
-![](img/unisym-search.gif)
+![](img/unisym-live.gif)
 
 ## Download
 

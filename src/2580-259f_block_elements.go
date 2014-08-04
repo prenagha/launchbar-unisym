@@ -1,0 +1,37 @@
+package main
+
+func init() {
+	chars["02580"] = [][2]string{
+		{"Upper Half Block", "\U00002580"},
+		{"Lower One Eighth Block", "\U00002581"},
+		{"Lower One Quarter Block", "\U00002582"},
+		{"Lower Three Eighths Block", "\U00002583"},
+		{"Lower Half Block", "\U00002584"},
+		{"Lower Five Eighths Block", "\U00002585"},
+		{"Lower Three Quarters Block", "\U00002586"},
+		{"Lower Seven Eighths Block", "\U00002587"},
+		{"Full Block", "\U00002588"},
+		{"Left Seven Eighths Block", "\U00002589"},
+		{"Left Three Quarters Block", "\U0000258a"},
+		{"Left Five Eighths Block", "\U0000258b"},
+		{"Left Half Block", "\U0000258c"},
+		{"Left Three Eighths Block", "\U0000258d"},
+		{"Left One Quarter Block", "\U0000258e"},
+		{"Left One Eighth Block", "\U0000258f"},
+		{"Right Half Block", "\U00002590"},
+		{"Light Shade", "\U00002591"},
+		{"Medium Shade", "\U00002592"},
+		{"Dark Shade", "\U00002593"},
+		{"Upper One Eighth Block", "\U00002594"},
+		{"Right One Eighth Block", "\U00002595"},
+		{"Quadrant Lower Left", "\U00002596"},
+		{"Quadrant Lower Right", "\U00002597"},
+		{"Quadrant Upper Left", "\U00002598"},
+		{"Quadrant Upper Left And Lower Left And Lower Right", "\U00002599"},
+		{"Quadrant Upper Left And Lower Right", "\U0000259a"},
+		{"Quadrant Upper Left And Upper Right And Lower Left", "\U0000259b"},
+		{"Quadrant Upper Left And Upper Right And Lower Right", "\U0000259c"},
+		{"Quadrant Upper Right", "\U0000259d"},
+		{"Quadrant Upper Right And Lower Left", "\U0000259e"},
+	}
+}
