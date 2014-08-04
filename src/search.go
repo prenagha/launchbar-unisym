@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"sort"
 	"strings"
 
@@ -42,7 +43,8 @@ LOOP:
 				names[row[0]] = struct{}{}
 				scores = append(scores, score)
 				i := NewItem(row[0])
-				i.SetIcon(iconPath(cat, row[0]))
+				i.SetSubtitle(fmt.Sprintf("%s %X", row[1], []rune(row[1])[0]))
+				i.SetIcon(iconPath(cat, row[1]))
 				i.Run("showChar", row[0], row[1])
 				i.SetAction("unisym")
 				i.SetActionReturnsItems(true)

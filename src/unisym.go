@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os/exec"
 	"path"
-	"strings"
 
 	sjson "github.com/bitly/go-simplejson"
 	. "github.com/nbjahan/go-launchbar"
@@ -16,7 +15,8 @@ var pb *Action
 var chars = map[string][][2]string{}
 
 func iconPath(f, s string) string {
-	s = strings.Replace(s, " ", "-", -1) + "-Template.pdf"
+	r := []rune(s)[0]
+	s = fmt.Sprintf("%X", r) + "-Template.pdf"
 	return path.Join(pb.ActionPath(), "Contents", "Resources", f, s)
 }
 
