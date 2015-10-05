@@ -9,7 +9,7 @@
 	<key>CFBundleName</key>
 	<string>Unicode Symbols</string>
 	<key>CFBundleVersion</key>
-	<string>1.4.0</string>
+	<string>1.5.0</string>
 	<key>LBDebugLogEnabled</key>
 	<false/>
 	<key>LBDescription</key>
@@ -20,8 +20,12 @@
 		<string>Collection of unicode symbols to use in text: ⚖ ☯ ∞ ★ ☕</string>
 		<key>LBTwitter</key>
 		<string>@nbjahan</string>
-		<key>LBWebsite</key>
+		<key>LBWebsiteURL</key>
 		<string>https://github.com/nbjahan/launchbar-unisym</string>
+		<key>LBUpdateURL</key>
+		<string>https://raw.githubusercontent.com/nbjahan/launchbar-unisym/master/src/Info.plist</string>
+		<key>LBChangelog</key>
+		<string>1.5.0: Support action versioning</string>
 	</dict>
 	<key>LBScripts</key>
 	<dict>
